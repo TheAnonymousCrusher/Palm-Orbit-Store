@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palm Orbit Store</title>
+  <link rel="preload" href="utils/gi.ttf" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="utils/ico32.png">
+  <style>
+
+
+
+
+
+    ::-webkit-scrollbar {
+      width: 0.5em;
+      height: .5em;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hsl(60, 100%, 50%);
+      border-radius: 150vw;
+      margin-block: .5em;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(330, 100%, 65%);
+      border: .12em solid hsl(0, 100%, 100%);
+      border-radius: 150vw;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(330, 100%, 65%, 0.5);
+    }
+
+    ::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    }
+
+    ::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    }
+
+
+
+    
+    
+    .loading {
+      display: inline-block;
+      animation: spin 1s linear infinite;
+    }
+
+    @font-face {
+      font-family: 'GI';
+      src: url('utils/gi.ttf');
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed; 
+    }
+
+    /* PC Client */
+    @media only screen and (min-width: 768px) {
+      body {
+        background-image: url("utils/bg.jpg");
+        background-position: center center; 
+      }
+    }
+
+    /* Mobile Client */
+    @media only screen and (max-width: 767px) {
+    body {
+      background-image: url("utils/bg1.jpg");
+      background-position: center top;
+      }
+    }
+    
+    h1 {
+      color: black;
+      font-weight: bold;
+      margin: 15px;
+      text-align: center;
+      font-family: 'GI', 'Courier New';
+    }
+
+    hr {
+      height: 4px;
+      background-color: black;
+      margin: 20px 0;
+      border-radius: 250vw;
+    }
+
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Hide all des. at first
+      var descriptions = document.querySelectorAll('.card-text-description');
+      descriptions.forEach(function(description) {
+        description.style.display = 'none';
+      });
+    });
+
+    function toggleDescription(cardId) {
+      var description = document.getElementById(cardId + '-description');
+      var button = document.getElementById(cardId + '-button');
+
+      if (description.style.display === 'none') {
+        description.style.display = 'block';
+        button.innerHTML = 'Hide Description';
+      } else {
+        description.style.display = 'none';
+        button.innerHTML = 'Show Description';
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <br>
+    <h1 data-value="PALM ORBIT STORE">PALM ORBIT STORE</h1>
+    <br>
+    <h3 style="color: hsl(60, 100%, 50%); text-align: left; font-size: 15px; font-family: GI;">Website Designed by Saajid Mohamed</h3>
+    <h3 style="color: white; text-align: left; font-size: 15px; font-family: GI;">
+      <img src="utils/wa-ico16.png" alt="WhatsApp Icon" style="vertical-align: middle; margin-right: 5px;">060 570 9073</h3>
+    <br>
+    <h3 style="color: hsl(60, 100%, 50%); text-align: right; font-size: 15px; font-family: GI;">Product Sold by Zeeshan Ahmed</h3>
+    <h3 style="color: white; text-align: right; font-size: 15px; font-family: GI;">
+      <img src="utils/wa-ico16.png" alt="WhatsApp Icon" style="vertical-align: middle; margin-right: 5px;">074 688 7886</h3>
+    <hr> 
+    <br>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/rgb.png" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB FULL RGB</h5>
+            <p id="product1-description" class="card-text-description">
+              <b>Specifications:</b> <br>Brand: VDENMENV <br>Cable Type:	Type C / USB <br>LED Colour: Full RGB <br>Output: 2.4A max Fast Charging <br>Cable Length: 1M <br>Cable Material:	Extra-durable ...</p>
+            <p class="card-text" style="font-weight: bold;">Price: R100.00</p>
+            <button id="product1-button" onclick="toggleDescription('product1')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/blue.png" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB BLUE</h5>
+            <p id="product2-description" class="card-text-description">
+              Elevate your charging experience with our LED Blue Type C USB Cable. This innovative cable not only provides fast and efficient charging for your devices but also adds a stunning visual element with its built-in LED lights. When plugged in, the cable emits a captivating blue glow, creating a unique and stylish effect. Its Type C compatibility ensures broad device compatibility, while the durable construction and tangle-free design make it a reliable and long-lasting charging solution. Experience the perfect blend of functionality and aesthetics with our LED Blue Type C USB Cable and stand out from the crowd while keeping your devices powered up.</p>
+            <p class="card-text" style="font-weight: bold;">Price: R80.00</p>
+            <button id="product2-button" onclick="toggleDescription('product2')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/green.png" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB GREEN</h5>
+            <p id="product3-description" class="card-text-description">
+              Add a vibrant touch to your charging routine with our LED Green Type C USB Cable. This versatile cable not only provides reliable charging for your devices but also showcases a brilliant green light when plugged in. The eye-catching LED illumination enhances the overall experience while ensuring quick and efficient charging. With its Type C compatibility, durable construction, and tangle-free design, our LED Green Type C USB Cable is a perfect blend of style and functionality. Stay connected and stand out with this unique charging solution.</p>
+            <p class="card-text" style="font-weight: bold;">Price: R80.00</p>
+            <button id="product3-button" onclick="toggleDescription('product3')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/pink.png" class="card-img-top" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB PINK</h5>
+            <p id="product4-description" class="card-text-description">
+              Experience a stylish and reliable charging solution with our LED Pink Type C USB Cable. This premium cable not only ensures fast and efficient charging but also features captivating pink LED lights that light up when connected. The vibrant illumination adds a touch of elegance and uniqueness to your charging experience. Designed with Type C compatibility, durability, and tangle-free construction, our LED Pink Type C USB Cable is a must-have accessory for anyone looking to charge their devices in style. Stay connected and make a fashion statement with our LED Pink Type C USB Cable.</p>
+            <p class="card-text" style="font-weight: bold;">Price: R80.00</p>
+            <button id="product4-button" onclick="toggleDescription('product4')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/yellow.png" class="card-img-top" alt="Product 5">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB YELLOW</h5>
+            <p id="product5-description" class="card-text-description">
+              Introducing our LED Yellow Type C USB Cable - a perfect blend of style and functionality. This cable not only ensures fast and efficient charging but also features a captivating yellow LED light that illuminates when plugged in. The vibrant glow adds a touch of personality and uniqueness to your charging experience. With its Type C compatibility, durable construction, and tangle-free design, our LED Yellow Type C USB Cable offers a reliable and stylish solution for keeping your devices powered up. Stand out from the crowd with this eye-catching charging accessory.</p>
+            <p class="card-text" style="font-weight: bold;">Price: R80.00</p>
+            <button id="product5-button" onclick="toggleDescription('product5')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="utils/gray.png" class="card-img-top" alt="Product 6">
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: bold;">USB GRAY</h5>
+            <p id="product6-description" class="card-text-description">
+              Even though its exterior may appear dull, our Gray LED USB Cable shines with exceptional performance and reliability. This innovative cable is designed to provide fast and efficient charging for your devices, ensuring you stay powered up at all times. With its sleek and understated gray design, it seamlessly blends into any setting while delivering superior functionality. The LED indicator lights up when plugged in, adding a subtle touch of illumination that enhances the overall experience. Don't be deceived by its muted appearance – our Gray LED USB Cable is a reliable companion that brings efficiency and style to your charging routine.</p>
+            <p class="card-text" style="font-weight: bold;">Price: R80.00</p>
+            <button id="product6-button" onclick="toggleDescription('product6')" class="btn btn-primary">Show Description</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+  <hr>
+  <h3 style="color:black; text-align: left; 
+  font-size: 12px; font-family: GI; font-weight: bold;">
+  © Saajid Mohamed, 2023</h3>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="glt.js"></script>
+</body>
+</html>
